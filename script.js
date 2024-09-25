@@ -7,7 +7,8 @@ let nyarray =  array.map(    (element)=>{
 return `<div> <h1>${element}</h1> </div>`
 } )
 
-
+"HEJ".concat("SAN","!")  //"HEJSAN!"
+"HEJ"+"SAN"              //"HEJSAN"
 
 let primaryStyle = document.getElementById('primaryStyle')
 

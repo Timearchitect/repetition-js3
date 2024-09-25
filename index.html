@@ -55,10 +55,19 @@ async await
                     <a class="nav-link" href="#Variablar">Variablar </a>
                 </li>
                 <li class="nav-item">
+                    <a class="nav-link" href="#Datatyper">Datatyper </a>
+                </li>
+                <li class="nav-item">
                     <a class="nav-link" href="#Conditions">Conditions</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#If_satser">If satser</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#Arrayer">Arrayer</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#Loopar">Loopar</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#Functions">Functions</a>
@@ -102,15 +111,21 @@ async await
         <pre aria-hidden="true">
             <section id="terms"><h1>terms</h1><code spellcheck="false" contenteditable="true" class="language-js"  onblur=" hljs.highlightAll()" onkeyup="if(sw){sw=false;where=getPos(this);dummything();setPos(this,where);}" onkeydown="sw=true;">
 2 + 3 * 2               // ett uttryck , en kod/kommandon = statement
-let svar= (2 + 3) * 2   // PAMDAS
-                        
+/+ - *                  // Operatorerna
+1 + 1                   //Opernader är 1  
+let svar= (2 + 3) * 2   // PEMDAS
+let y = 5; let z = 5    // två statements  
                         // exekveringssekvens ordningen statements/koder körs
+let  const function     // är keywords
 
+                        //concatination & append = lägger till
+"HEJ".concat("SAN","!")  //"HEJSAN!" kan ta in en array
+"HEJ"+"SAN"              //"HEJSAN"
             </code> </section>
             
             <section id="Variablar"><h1>Variablar</h1><code spellcheck="false" contenteditable="true" class="language-js"  onblur=" hljs.highlightAll()" onkeyup="if(sw){sw=false;where=getPos(this);dummything();setPos(this,where);}" onkeydown="sw=true;">
 
-let a              // deklarera utan värde , dufault värde är undefined
+let a              // deklarera utan värde , default värde är undefined
 let x = 5 
 let y = 10, z = 15 // deklarera flera i en rad utan att ange keyword 
 
@@ -126,6 +141,29 @@ x += 2 // öka med 2
 x -= 2 // minska med 2
 x *= 2 // multiplicera med 2
 x /= 2 // dividera med 2
+            </code> </section>
+
+            <section id="Datatyper"><h1>Datatyper</h1><code spellcheck="false" contenteditable="true" class="language-js"  onblur=" hljs.highlightAll()" onkeyup="if(sw){sw=false;where=getPos(this);dummything();setPos(this,where);}" onkeydown="sw=true;">
+
+                //String
+                let x = "tjenare"; //string , sträng , String
+                x = '@'; //character , karaktär , char
+                
+                //number
+                let x2 = 550; //integer, heltal  , int
+                x2 = -0.5; //float/double , decimaltal , f
+                
+                //boolean    true kan tolkas som 1, false kan tolkas som 0
+                let x3 = false; // boolean , boolean , bool
+                
+                //String + String = String   // konkatination , klistrar ihop
+                //String + number = String
+                //String + boolean = String
+                
+                //number + number = number
+                //number + boolean = number //tolkar boolean som 1/0
+                
+                // boolean + boolean = number // kalkylationer
             </code> </section>
 
             <section id="Conditions"><h1>Conditions</h1><code spellcheck="false" contenteditable="true" class="language-js"  onblur=" hljs.highlightAll()" onkeyup="if(sw){sw=false;where=getPos(this);dummything();setPos(this,where);}" onkeydown="sw=true;">
@@ -151,6 +189,12 @@ console.log(true  || true)      //true
 console.log(false || true)      //true
 console.log(false || false)     //false
 
+
+console.log(!true)     // false  ! inte
+console.log(1 !=  2)   // true  1 är inte 2  som är sant
+
+
+
 const falsy = [ false,0,-1,"",null,undefined,NaN,0n,document.all]
 
 if( "hej"  )                         //truhly värde
@@ -167,7 +211,7 @@ if(  { first: "Alrik", last:"He"  } )  // object är truhly värde
 
 
 let fullname = data.name || "Alrik He"   // om data.name ej existerar så ger den falsy pga undefined så den väljer  "Alrik He" 
-</code> </section>
+            </code> </section>
 
             <section id="If_satser"><h1>If satser</h1><code spellcheck="false" contenteditable="true" class="language-js"  onblur=" hljs.highlightAll()" onkeyup="if(sw){sw=false;where=getPos(this);dummything();setPos(this,where);}" onkeydown="sw=true;">
 if(x > 10)
@@ -199,6 +243,35 @@ default:  // alla andra värden key är går till default
 // Ternary Operator
 
 console.log( ( 1 < 5 ) ? "japp" : "nope" ) // loggar "japp"
+
+            </code></section>
+
+            <section id="Arrayer"><h1>Arrayer</h1><code spellcheck="false" contenteditable="true" class="language-js"  onblur=" hljs.highlightAll()" onkeyup="if(sw){sw=false;where=getPos(this);dummything();setPos(this,where);}" onkeydown="sw=true;">
+let ary = [1,true,"hej"]              
+ary[0] = 1
+ary[3]  = 88 // lägger in en ny index
+console.log(ary.length) // ger antal element i arryen
+
+ary.length = 6 // går ej att göra
+
+
+ary.push("hej") 
+
+let lista = ['Alrik HE', 'benny', 10, 'hej', true, 'hejsan']
+lista[0] = 888
+lista[6] = false // lägga in mer element ,måste ha index nummer
+
+lista.push(NaN) //lägga in värden på slutet
+lista.unshift('emma') // lägga början på  arrayen
+
+lista.pop() // tarbort från slutet
+lista.shift() //tarbort från början av arrayn
+
+lista.reverse() // tvärtom ordning
+// arrayer har en ordning
+lista.sort() // sorterar i alfabetisk ordning
+// om ni tilldelar utan [index] som : lista = 1000 så blir den till en vanlig variabel
+// man kan tilldela andra variabler med [] så blir den till en array
 
             </code></section>
 
@@ -234,10 +307,43 @@ let stuff3 = ( ) => {
     console.log(foo)                                 // når foo 
 }                 
 
-button.addEventlistener( "click" , ()=>{
-    console.log(foo)                                 // når foo ej pga function scoped
+button.addEventListener( "click" , ()=>{
+    console.log(foo)                                 // når foo 
 }  )
+button.click()                                      //den kör button onclick metoden
 
+                    </code></section>
+
+             <section id="Loopar"><h1>Loopar</h1><code spellcheck="false" contenteditable="true" class="language-js"  onblur=" hljs.highlightAll()" onkeyup="if(sw){sw=false;where=getPos(this);dummything();setPos(this,where);}" onkeydown="sw=true;">
+
+let x = 0                
+while(x < 3){
+    console.log(x)
+    x++
+}
+
+do{                   // do visa en gång minst fast att x är 3 nu
+    console.log(x)
+    x++
+}while(x < 3)
+
+
+for(int i = 0; i < 3 ; i++){      // i++ körs sist i while kan man byta plats på console & ++ med ej for
+    console.log(i)
+}
+
+
+let array = [ "Alrik","Eric","Emma"]
+
+for( x in array){
+    console.log(x)   // loggar ut keys
+}
+
+
+for( x of array){    //funkar ej på vanliga Object
+    console.log(x)   // loggar ut values    
+}
+                       
             </code></section>
 
             <section id="Objects"><h1>Objects</h1><code spellcheck="false" contenteditable="true" class="language-js"  onblur=" hljs.highlightAll()" onkeyup="if(sw){sw=false;where=getPos(this);dummything();setPos(this,where);}" onkeydown="sw=true;">
