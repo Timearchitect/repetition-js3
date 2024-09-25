@@ -11,8 +11,8 @@
 
         <!--         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/default.min.css" />
  -->
-        <!--  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>  funkar ej på det senaste-->
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.1.0/highlight.min.js"></script>
+         <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>  
+        <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.1.0/highlight.min.js"></script> -->
         <link id="primaryStyle" rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.0.3/styles/vs2015.min.css" />
         <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
         <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
@@ -111,10 +111,8 @@ async await
     </nav>
 
     <body>
-
-
         <pre aria-hidden="true">
-            <section id="terms"><h1>terms</h1><code spellcheck="false" contenteditable="true" class="language-js"  onblur=" hljs.highlightAll()" onkeyup="if(sw){sw=false;where=getPos(this);dummything();setPos(this,where);}" onkeydown="sw=true;">
+            <section id="terms"><h1>terms</h1><code spellcheck="false" contenteditable="true" class="language-js"  onblur=" hljs.highlightAll()" onkeyup="if(sw){sw=false;where=getPos(this);dummything(this);setPos(this,where);}" onkeydown="sw=true;">
 2 + 3 * 2               // ett uttryck , en kod/kommandon = statement
 /+ - *                  // Operatorerna
 1 + 1                   //Opernader är 1  
@@ -128,7 +126,7 @@ let  const function     // är keywords
 "HEJ"+"SAN"              //"HEJSAN"
             </code> </section>
             
-            <section id="Variablar"><h1>Variablar</h1><code spellcheck="false" contenteditable="true" class="language-js"  onblur=" hljs.highlightAll()" onkeyup="if(sw){sw=false;where=getPos(this);dummything();setPos(this,where);}" onkeydown="sw=true;">
+            <section id="Variablar"><h1>Variablar</h1><code spellcheck="false" contenteditable="true" class="language-js"  onblur=" hljs.highlightAll()" onkeyup="if(sw){sw=false;where=getPos(this);dummything(this);setPos(this,where);}" onkeydown="sw=true;">
 
 let a              // deklarera utan värde , default värde är undefined
 let x = 5 
@@ -148,7 +146,7 @@ x *= 2 // multiplicera med 2
 x /= 2 // dividera med 2
             </code> </section>
 
-            <section id="Datatyper"><h1>Datatyper</h1><code spellcheck="false" contenteditable="true" class="language-js"  onblur=" hljs.highlightAll()" onkeyup="if(sw){sw=false;where=getPos(this);dummything();setPos(this,where);}" onkeydown="sw=true;">
+            <section id="Datatyper"><h1>Datatyper</h1><code spellcheck="false" contenteditable="true" class="language-js"  onblur=" hljs.highlightAll()" onkeyup="if(sw){sw=false;where=getPos(this);dummything(this);setPos(this,where);}" onkeydown="sw=true;">
 
                 //String
                 let x = "tjenare"; //string , sträng , String
@@ -171,7 +169,7 @@ x /= 2 // dividera med 2
                 // boolean + boolean = number // kalkylationer
             </code> </section>
 
-            <section id="Conditions"><h1>Conditions</h1><code spellcheck="false" contenteditable="true" class="language-js"  onblur=" hljs.highlightAll()" onkeyup="if(sw){sw=false;where=getPos(this);dummything();setPos(this,where);}" onkeydown="sw=true;">
+            <section id="Conditions"><h1>Conditions</h1><code spellcheck="false" contenteditable="true" class="language-js"  onblur=" hljs.highlightAll()" onkeyup="if(sw){sw=false;where=getPos(this);dummything(this);setPos(this,where);}" onkeydown="sw=true;">
 let x =  1 + 1 == 2    // x är true
 
 console.log(1==1)
@@ -218,7 +216,7 @@ if(  { first: "Alrik", last:"He"  } )  // object är truhly värde
 let fullname = data.name || "Alrik He"   // om data.name ej existerar så ger den falsy pga undefined så den väljer  "Alrik He" 
             </code> </section>
 
-            <section id="If_satser"><h1>If satser</h1><code spellcheck="false" contenteditable="true" class="language-js"  onblur=" hljs.highlightAll()" onkeyup="if(sw){sw=false;where=getPos(this);dummything();setPos(this,where);}" onkeydown="sw=true;">
+            <section id="If_satser"><h1>If satser</h1><code spellcheck="false" contenteditable="true" class="language-js"  onblur=" hljs.highlightAll()" onkeyup="if(sw){sw=false;where=getPos(this);dummything(this);setPos(this,where);}" onkeydown="sw=true;">
 if(x > 10)
     console.log("high");
 else if (x > 100)   // denna kommer aldrig att triggas
@@ -251,7 +249,7 @@ console.log( ( 1 < 5 ) ? "japp" : "nope" ) // loggar "japp"
 
             </code></section>
 
-            <section id="Arrayer"><h1>Arrayer</h1><code spellcheck="false" contenteditable="true" class="language-js"  onblur=" hljs.highlightAll()" onkeyup="if(sw){sw=false;where=getPos(this);dummything();setPos(this,where);}" onkeydown="sw=true;">
+            <section id="Arrayer"><h1>Arrayer</h1><code spellcheck="false" contenteditable="true" class="language-js"  onblur=" hljs.highlightAll()" onkeyup="if(sw){sw=false;where=getPos(this);dummything(this);setPos(this,where);}" onkeydown="sw=true;">
 let ary = [1,true,"hej"]              
 ary[0] = 1
 ary[3]  = 88 // lägger in en ny index
@@ -280,7 +278,7 @@ lista.sort() // sorterar i alfabetisk ordning
 
             </code></section>
 
-            <section id="Functions"><h1>Functions</h1><code spellcheck="false" contenteditable="true" class="language-js"  onblur=" hljs.highlightAll()" onkeyup="if(sw){sw=false;where=getPos(this);dummything();setPos(this,where);}" onkeydown="sw=true;">
+            <section id="Functions"><h1>Functions</h1><code spellcheck="false" contenteditable="true" class="language-js"  onblur=" hljs.highlightAll()" onkeyup="if(sw){sw=false;where=getPos(this);dummything(this);setPos(this,where);}" onkeydown="sw=true;">
 
 function stuff(){  //definera fuktionen stuff
     alert("myStuff!") 
@@ -319,7 +317,7 @@ button.click()                                      //den kör button onclick me
 
                     </code></section>
 
-            <section id="Call_back"><h1>Call back</h1><code spellcheck="false" contenteditable="true" class="language-js"  onblur=" hljs.highlightAll()" onkeyup="if(sw){sw=false;where=getPos(this);dummything();setPos(this,where);}" onkeydown="sw=true;">
+            <section id="Call_back"><h1>Call back</h1><code spellcheck="false" contenteditable="true" class="language-js"  onblur=" hljs.highlightAll()" onkeyup="if(sw){sw=false;where=getPos(this);dummything(this);setPos(this,where);}" onkeydown="sw=true;">
                 
 function display( sum ){
     document.write(`talet ${sum}`)
@@ -333,7 +331,7 @@ addition(5, 5, display);
 
             </code></section>
 
-             <section id="Loopar"><h1>Loopar</h1><code spellcheck="false" contenteditable="true" class="language-js"  onblur=" hljs.highlightAll()" onkeyup="if(sw){sw=false;where=getPos(this);dummything();setPos(this,where);}" onkeydown="sw=true;">
+             <section id="Loopar"><h1>Loopar</h1><code spellcheck="false" contenteditable="true" class="language-js"  onblur=" hljs.highlightAll()" onkeyup="if(sw){sw=false;where=getPos(this);dummything(this);setPos(this,where);}" onkeydown="sw=true;">
 
 let x = 0                
 while(x < 3){
@@ -365,7 +363,7 @@ for( x of array){    //funkar ej på vanliga Object
                        
             </code></section>
 
-            <section id="Objects"><h1>Objects</h1><code spellcheck="false" contenteditable="true" class="language-js"  onblur=" hljs.highlightAll()" onkeyup="if(sw){sw=false;where=getPos(this);dummything();setPos(this,where);}" onkeydown="sw=true;">
+            <section id="Objects"><h1>Objects</h1><code spellcheck="false" contenteditable="true" class="language-js"  onblur=" hljs.highlightAll()" onkeyup="if(sw){sw=false;where=getPos(this);dummything(this);setPos(this,where);}" onkeydown="sw=true;">
 
 let hus = { 
     adress:"yxgatan 5b",
@@ -486,10 +484,17 @@ function myStopInterval() {
 }
 
         </code></section>
-        </pre>
-        <style style="display: block;" width="200" height="500" contenteditable="true">
-            h1{ color: cyan;   font-size: 10rem !important;}   
-            body{ padding:5rem !important; } 
+        <style wrap="on" cols="30" rows="5" style="white-space: pre-wrap; display: block;" width="200" height="500" contenteditable="true" class="language-css"  onblur="hljs.highlightAll()" >
+            h1 {
+                color: cyan;
+                font-size: 2rem !important;
+            }
+            body {
+                padding: 2rem !important;
+            }   
         </style>
+        
+        </pre>
+
     </body>
 </html>

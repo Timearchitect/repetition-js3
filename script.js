@@ -1,3 +1,5 @@
+//const { default: hljs } = require("highlight.js")
+
 /* document.getElementsByTagName('code')[0].addEventListener('keyup', (e) => {if(sw){sw=false;where=getPos(this);dummything();setPos(this,where);}})
 document.getElementsByTagName('code')[0].addEventListener('keydown', (e) => {sw=true;})
 document.getElementsByTagName('code')[0].addEventListener('blur', (e) => hljs.highlightAll()) */
@@ -48,8 +50,10 @@ function change(e) {
 
 hljs.highlightAll()
 
-function dummything() {
-    hljs.highlightAll()
+function dummything(e) {
+  delete e.dataset.highlighted;
+  hljs.highlightAll()
+  //  hljs.highlightAll()
 }
 
 /*https://www.cssscript.com/demo/set-get-caret-position/*/
