@@ -1,6 +1,9 @@
 body {
     margin: 1rem;
 }
+.nav-link{
+    font-size: 8pt;
+}
 code {
     margin: 1rem 3rem 3rem 3rem;
     padding: 2rem;

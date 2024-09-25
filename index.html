@@ -49,7 +49,7 @@ async await
         <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item">
-                    <a class="nav-link" href="#terms">terms </a>
+                    <a class="nav-link" href="#terms">Termer</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#Variablar">Variablar </a>
@@ -71,6 +71,9 @@ async await
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#Functions">Functions</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#Call_back">Call back</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#Objects">Objects</a>
@@ -314,6 +317,20 @@ button.click()                                      //den kör button onclick me
 
                     </code></section>
 
+            <section id="Call_back"><h1>Call back</h1><code spellcheck="false" contenteditable="true" class="language-js"  onblur=" hljs.highlightAll()" onkeyup="if(sw){sw=false;where=getPos(this);dummything();setPos(this,where);}" onkeydown="sw=true;">
+                
+function display( sum ){
+    document.write(`talet ${sum}`)
+}
+function addition(tal1, tal2, myCallback) {
+    let sum = tal1 + tal2;
+    myCallback(sum);
+}
+
+addition(5, 5, display);
+
+            </code></section>
+
              <section id="Loopar"><h1>Loopar</h1><code spellcheck="false" contenteditable="true" class="language-js"  onblur=" hljs.highlightAll()" onkeyup="if(sw){sw=false;where=getPos(this);dummything();setPos(this,where);}" onkeydown="sw=true;">
 
 let x = 0                
@@ -445,7 +462,29 @@ myFunction().then(
 myFunction().catch(
     function(err) {console.err("OH NO!!!");}
 )
-                            </code></section>
+
+
+
+const myTimeout = setTimeout(doneFun, 10000);
+
+function doneFun() {
+    console.log("TIMER DONE!!") 
+}
+
+function myStopFunction() {
+  clearTimeout(myTimeout);
+  console.log("TIMER CANCELED!!") 
+}
+
+
+const intervalTimer = setInterval(displayHello, 1000); 
+
+function myStopInterval() {
+    clearInterval(intervalTimer);
+    console.log("TIMER CANCELED!!") 
+}
+
+        </code></section>
         </pre>
     </body>
 </html>
