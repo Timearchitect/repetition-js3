@@ -49,6 +49,9 @@ async await
         <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item">
+                    <a class="nav-link" href="#terms">terms </a>
+                </li>
+                <li class="nav-item">
                     <a class="nav-link" href="#Variablar">Variablar </a>
                 </li>
                 <li class="nav-item">
@@ -58,6 +61,12 @@ async await
                     <a class="nav-link" href="#If_satser">If satser</a>
                 </li>
                 <li class="nav-item">
+                    <a class="nav-link" href="#Functions">Functions</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#Objects">Objects</a>
+                </li>
+                <li class="nav-item">
                     <a class="nav-link" href="#Destructuring">Destructuring</a>
                 </li>
                 <li class="nav-item">
@@ -65,6 +74,10 @@ async await
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#filter">filter()</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="#reduce">reduce()</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#async_await">async await</a>
@@ -87,7 +100,17 @@ async await
 
     <body>
         <pre aria-hidden="true">
+            <section id="terms"><h1>terms</h1><code spellcheck="false" contenteditable="true" class="language-js"  onblur=" hljs.highlightAll()" onkeyup="if(sw){sw=false;where=getPos(this);dummything();setPos(this,where);}" onkeydown="sw=true;">
+2 + 3 * 2               // ett uttryck , en kod/kommandon = statement
+let svar= (2 + 3) * 2   // PAMDAS
+                        
+                        // exekveringssekvens ordningen statements/koder körs
+
+            </code> </section>
+            
             <section id="Variablar"><h1>Variablar</h1><code spellcheck="false" contenteditable="true" class="language-js"  onblur=" hljs.highlightAll()" onkeyup="if(sw){sw=false;where=getPos(this);dummything();setPos(this,where);}" onkeydown="sw=true;">
+
+let a              // deklarera utan värde , dufault värde är undefined
 let x = 5 
 let y = 10, z = 15 // deklarera flera i en rad utan att ange keyword 
 
@@ -128,8 +151,23 @@ console.log(true  || true)      //true
 console.log(false || true)      //true
 console.log(false || false)     //false
 
+const falsy = [ false,0,-1,"",null,undefined,NaN,0n,document.all]
 
-            </code> </section>
+if( "hej"  )                         //truhly värde
+    console.log( "SANT" )
+
+if(  55 )                         //truhly värde
+    console.log( "SANT" )
+
+if(  [1,2,3] )                         // array är truhly värde
+    console.log( "SANT" )
+
+if(  { first: "Alrik", last:"He"  } )  // object är truhly värde
+    console.log( "SANT" )
+
+
+let fullname = data.name || "Alrik He"   // om data.name ej existerar så ger den falsy pga undefined så den väljer  "Alrik He" 
+</code> </section>
 
             <section id="If_satser"><h1>If satser</h1><code spellcheck="false" contenteditable="true" class="language-js"  onblur=" hljs.highlightAll()" onkeyup="if(sw){sw=false;where=getPos(this);dummything();setPos(this,where);}" onkeydown="sw=true;">
 if(x > 10)
@@ -163,26 +201,106 @@ default:  // alla andra värden key är går till default
 console.log( ( 1 < 5 ) ? "japp" : "nope" ) // loggar "japp"
 
             </code></section>
+
+            <section id="Functions"><h1>Functions</h1><code spellcheck="false" contenteditable="true" class="language-js"  onblur=" hljs.highlightAll()" onkeyup="if(sw){sw=false;where=getPos(this);dummything();setPos(this,where);}" onkeydown="sw=true;">
+
+function stuff(){  //definera fuktionen stuff
+    alert("myStuff!") 
+}
+stuff()         // invoke/call fuction stuff, / anropa/kalla på funktionen stuff
+
+
+addition( 1 )   // funktioner hojstas och kan anropas ovanför defineringen
+function addition( tal1 , tal2 = 0){  //default värde är 0
+    console.log( tal1 + tal2)
+}
+
+
+function bundle(...ary){        //spread operator som tilldelas till en array
+    console.log(  ary  )
+}
+bundle(1,2,3,4,5,6,7,8,9,10 )   // alla number converteras till en array pga ...(spread) operator 
+
+function check(){
+    return "japp checks out"         //return value/ retuneringsvärde
+    console.log(x)
+}
+
+let stuff2 = function( ){  alert("myStuff2!")  }       //anonym funktion som tilldelas till stuff2 
+
+let foo = 5
+let stuff3 = ( ) => { 
+    alert("myStuff3!")             //anonym funktion (arraw funktion ) som tilldelas till stuff3 
+    console.log(foo)                                 // når foo 
+}                 
+
+button.addEventlistener( "click" , ()=>{
+    console.log(foo)                                 // når foo ej pga function scoped
+}  )
+
+            </code></section>
+
+            <section id="Objects"><h1>Objects</h1><code spellcheck="false" contenteditable="true" class="language-js"  onblur=" hljs.highlightAll()" onkeyup="if(sw){sw=false;where=getPos(this);dummything();setPos(this,where);}" onkeydown="sw=true;">
+
+let hus = { 
+    adress:"yxgatan 5b",
+    sold: true,
+    floors: 4,
+    owner:"Caroline"
+}
+
+console.log(hus.adress)  // loggar "yxgatan 5b"
+console.log(hus["adress"])  // loggar "yxgatan 5b" också
+
+hus.age = 10  //skapar en property till hus som heter age som ej fanns
+
+let petJellyfish = { 
+    firstName:"Kokomi",
+    lastName: "Sangonomiya",
+    fullname: function() {return `${this.firstName} ${this.lastName}` }    //this refererar
+}
+
+let object = {
+    exist:function(){ alert("EXISTS!!")}   // en method är en funktion som object kan köras 
+}
+
+object.say = function ( x ) {  alert(x) }  // lägg till en method till objectet
+object.log = ( x ) => {  console.log(x) }  // lägg till en method log
+object["log"] = ( x ) => {  console.log(x) }  // samma
+            </code></section>
+
             <section id="Destructuring"><h1>Destructuring</h1><code spellcheck="false" contenteditable="true" class="language-js"  onblur=" hljs.highlightAll()" onkeyup="if(sw){sw=false;where=getPos(this);dummything();setPos(this,where);}" onkeydown="sw=true;">
 // Ett objekt
 const person = {
     firstName: "Alrik",
     lastName: "He",
     age: 32
+    first-last: "Alrik He"    // ej valid variabelnamn men ok propertynamn
 };
 
 // Destructuring till variabler
-let {firstName, lastName} = person;
+let {firstName, lastName} = person  //destruktar till 2 variablar
+const {age = 0 } = person           // destruktar till 1 variabel med default värde
+const {lastname: surname} = person  // destruktar med
 console.log(firstName)       // loggar "Alrik"
+
+let key = "email"
+person[key] = alrik_he@hotmail.com  //runtime computed property
+let {[key]} = person                
+
+//array
 
 
 let array = ["Alrik","Emma","Linda"]
-let array2 = {...array , "Eric"}   //destructar sedan lägger in en extra
 
-                                            </code></section>
-            <section id="DOM"><h1>DOM</h1><code spellcheck="false" contenteditable="true" class="language-js"  onblur=" hljs.highlightAll()" onkeyup="if(sw){sw=false;where=getPos(this);dummything();setPos(this,where);}" onkeydown="sw=true;">
-               
+
+let {person1 , person2 , person3 , person4 = "henrik"} = array     // default värde
+let [person1 ,  , person3 ] = array                                // skippar index 1
+let array2 = {...array , "Eric"}                                   // spread operator, destructar sedan lägger in en extra värde
+
+
             </code></section>
+
 
             <section id="map"><h1>map()</h1><code spellcheck="false" contenteditable="true" class="language-js"  onblur=" hljs.highlightAll()" onkeyup="if(sw){sw=false;where=getPos(this);dummything();setPos(this,where);}" onkeydown="sw=true;">
 let array = ["hej","yo","tjenare"]
@@ -200,6 +318,14 @@ let nyarray =  array.filter(    (element)=>{   // loopar och varje element sedan
     return  element != "yo"
 } )
             </code></section>
+
+            <section id="reduce"><h1>reduce()</h1><code spellcheck="false" contenteditable="true" class="language-js"  onblur=" hljs.highlightAll()" onkeyup="if(sw){sw=false;where=getPos(this);dummything();setPos(this,where);}" onkeydown="sw=true;">
+let price = [ 19 , 299 , 68 ]
+    
+let summan =  price.reduce(    (current,next)=>{   // loopar och varje element sedan retuneras värdet till nästa element
+    return  current + next
+} )
+                            </code></section>
 
             <section id="async_await"><h1>async await</h1><code spellcheck="false" contenteditable="true" class="language-js"  onblur=" hljs.highlightAll()" onkeyup="if(sw){sw=false;where=getPos(this);dummything();setPos(this,where);}" onkeydown="sw=true;">
 async function myFunction() {
