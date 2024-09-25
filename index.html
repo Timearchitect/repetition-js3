@@ -111,6 +111,8 @@ async await
     </nav>
 
     <body>
+
+
         <pre aria-hidden="true">
             <section id="terms"><h1>terms</h1><code spellcheck="false" contenteditable="true" class="language-js"  onblur=" hljs.highlightAll()" onkeyup="if(sw){sw=false;where=getPos(this);dummything();setPos(this,where);}" onkeydown="sw=true;">
 2 + 3 * 2               // ett uttryck , en kod/kommandon = statement
@@ -397,8 +399,7 @@ object["log"] = ( x ) => {  console.log(x) }  // samma
 const person = {
     firstName: "Alrik",
     lastName: "He",
-    age: 32
-    first-last: "Alrik He"    // ej valid variabelnamn men ok propertynamn
+    age: 32,
 };
 
 // Destructuring till variabler
@@ -417,9 +418,9 @@ let {[key]} = person
 let array = ["Alrik","Emma","Linda"]
 
 
-let {person1 , person2 , person3 , person4 = "henrik"} = array     // default värde
+let [person1 , person2 , person3 , person4 = "henrik"] = array     // default värde
 let [person1 ,  , person3 ] = array                                // skippar index 1
-let array2 = {...array , "Eric"}                                   // spread operator, destructar sedan lägger in en extra värde
+let array2 = [...array , "Eric"]                                   // spread operator, destructar sedan lägger in en extra värde
 
 
             </code></section>
@@ -486,5 +487,9 @@ function myStopInterval() {
 
         </code></section>
         </pre>
+        <style style="display: block;" width="200" height="500" contenteditable="true">
+            h1{ color: cyan;   font-size: 10rem !important;}   
+            body{ padding:5rem !important; } 
+        </style>
     </body>
 </html>
