@@ -5,7 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>FE23</title>
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous" />
-
+        <link rel="shortcut icon" href="https://gritacademy.se/wp-content/uploads/2021/05/cropped-bird-01-32x32.png" type="image/x-icon">
         <link rel="stylesheet" href="style.css" />
         <script src="script.js" defer></script>
 
@@ -42,7 +42,8 @@ async await
 -->
 
     <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
-        <a class="navbar-brand" href="#">FE23 - js3 </a>
+        <a class="navbar-brand" href="#"><img class=".img-thumbnail" width="50"
+             src="https://gritacademy.se/wp-content/uploads/2021/05/cropped-bird-01-192x192.png">FE23 - js3 </a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -79,6 +80,9 @@ async await
                     <a class="nav-link" href="#Objects">Objects</a>
                 </li>
                 <li class="nav-item">
+                    <a class="nav-link" href="#Classes">Classes</a>
+                </li>
+                <li class="nav-item">
                     <a class="nav-link" href="#Destructuring">Destructuring</a>
                 </li>
                 <li class="nav-item">
@@ -87,7 +91,6 @@ async await
                 <li class="nav-item">
                     <a class="nav-link" href="#filter">filter()</a>
                 </li>
-
                 <li class="nav-item">
                     <a class="nav-link" href="#reduce">reduce()</a>
                 </li>
@@ -286,7 +289,7 @@ function stuff(){  //definera fuktionen stuff
 stuff()         // invoke/call fuction stuff, / anropa/kalla på funktionen stuff
 
 
-addition( 1 )   // funktioner hojstas och kan anropas ovanför defineringen
+addition( 1 )   // funktioner hoistas och kan anropas ovanför defineringen
 function addition( tal1 , tal2 = 0){  //default värde är 0
     console.log( tal1 + tal2)
 }
@@ -392,6 +395,27 @@ object.log = ( x ) => {  console.log(x) }  // lägg till en method log
 object["log"] = ( x ) => {  console.log(x) }  // samma
             </code></section>
 
+
+            <section id="Classes"><h1>Classes</h1><code spellcheck="false" contenteditable="true" class="language-js"  onblur=" hljs.highlightAll()" onkeyup="if(sw){sw=false;where=getPos(this);dummything(this);setPos(this,where);}" onkeydown="sw=true;">
+                
+class Person {              // en mall för ett object
+    constructor(name, age) {
+        this.name = name;
+        this.age = age;
+    }
+}
+
+
+let person1 = new Person("Alrik",32) //instanierar ett Person object
+
+let person2 = {
+    name:"Alrik",
+    age:32
+}
+        
+console.log(person1 == person2)   // är false fast att dem är lika, i &lt;prototype&gt;: Object { … } finns dem olikheter
+                            </code></section>
+
             <section id="Destructuring"><h1>Destructuring</h1><code spellcheck="false" contenteditable="true" class="language-js"  onblur=" hljs.highlightAll()" onkeyup="if(sw){sw=false;where=getPos(this);dummything();setPos(this,where);}" onkeydown="sw=true;">
 // Ett objekt
 const person = {
@@ -410,7 +434,7 @@ const {lastname: surname} = person  // destruktar med
 console.log(firstName)       // loggar "Alrik"
 
 
-person["email"] = alrik_he@hotmail.com  
+person["email"] = "alrik_he@hotmail.com"  
 let {["email"]} = person                //runtime computed property
 
 //array
@@ -457,11 +481,11 @@ async function myFunction() {
     return "Hello";
 }
 
-myFunction().then(
+myFunction().then(    // när den är klar , finns tillfällen där datan utför return data.json() som ni bearbetas igen
     function(data) {console.log("GOT IT");}
 );
 
-myFunction().catch(
+myFunction().catch(   //vid error
     function(err) {console.err("OH NO!!!");}
 )
 
@@ -469,17 +493,17 @@ myFunction().catch(
 
 const myTimeout = setTimeout(doneFun, 10000);
 
-function doneFun() {
+function doneFun() { //callback
     console.log("TIMER DONE!!") 
 }
 
-function myStopFunction() {
+function myStopFunction() {  // kör denna innan 10 sek
   clearTimeout(myTimeout);
   console.log("TIMER CANCELED!!") 
 }
 
 
-const intervalTimer = setInterval(displayHello, 1000); 
+const intervalTimer = setInterval(doneFun, 1000); 
 
 function myStopInterval() {
     clearInterval(intervalTimer);
@@ -487,7 +511,7 @@ function myStopInterval() {
 }
 
         </code></section>
-        <style wrap="on" cols="30" rows="5" style="white-space: pre-wrap; display: block;" width="200" height="500" contenteditable="true" class="language-css"  onblur="hljs.highlightAll()" >
+        <style id="style" wrap="on" cols="30" rows="5" style="white-space: pre-wrap; display: block;" width="200" height="500" contenteditable="true" class="language-css"  onblur="hljs.highlightAll()" >
             h1 {
                 color: cyan;
                 font-size: 2rem !important;
@@ -496,7 +520,7 @@ function myStopInterval() {
                 padding: 2rem !important;
             }   
         </style>
-        
+        <script > hljs.highlightAll() </script>
         </pre>
 
     </body>

@@ -35,3 +35,10 @@ nav:hover{
         border-color: grey;
     }
 }
+.hljs-title,.function_{
+    color:rgb(253, 253, 176) !important;
+}
+.language_{
+    color:rgb(133, 213, 239) !important;
+
+}
