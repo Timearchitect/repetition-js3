@@ -41,7 +41,6 @@ function change(e) {
           primaryStyle.setAttribute("type", "text/css");
           primaryStyle.setAttribute("href", "https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.0.3/styles/vs.min.css");
           document.getElementsByTagName('HEAD')[0].appendChild(primaryStyle);
-
             break
     }
   
@@ -53,7 +52,7 @@ hljs.highlightAll()
 function dummything(e) {
   delete e.dataset.highlighted;
   hljs.highlightAll()
-  //  hljs.highlightAll()
+  // hljs.highlightAll()
 }
 
 /*https://www.cssscript.com/demo/set-get-caret-position/*/

@@ -148,25 +148,25 @@ x /= 2 // dividera med 2
 
             <section id="Datatyper"><h1>Datatyper</h1><code spellcheck="false" contenteditable="true" class="language-js"  onblur=" hljs.highlightAll()" onkeyup="if(sw){sw=false;where=getPos(this);dummything(this);setPos(this,where);}" onkeydown="sw=true;">
 
-                //String
-                let x = "tjenare"; //string , sträng , String
-                x = '@'; //character , karaktär , char
-                
-                //number
-                let x2 = 550; //integer, heltal  , int
-                x2 = -0.5; //float/double , decimaltal , f
-                
-                //boolean    true kan tolkas som 1, false kan tolkas som 0
-                let x3 = false; // boolean , boolean , bool
-                
-                //String + String = String   // konkatination , klistrar ihop
-                //String + number = String
-                //String + boolean = String
-                
-                //number + number = number
-                //number + boolean = number //tolkar boolean som 1/0
-                
-                // boolean + boolean = number // kalkylationer
+//String
+let x = "tjenare"; //string , sträng , String
+x = '@'; //character , karaktär , char
+
+//number
+let x2 = 550; //integer, heltal  , int
+x2 = -0.5; //float/double , decimaltal , f
+
+//boolean    true kan tolkas som 1, false kan tolkas som 0
+let x3 = false; // boolean , boolean , bool
+
+//String + String = String   // konkatination , klistrar ihop
+//String + number = String
+//String + boolean = String
+
+//number + number = number  // kalkylationer
+//number + boolean = number // kalkylationer , tolkar boolean som 1/0
+
+// boolean + boolean = number // kalkylationer
             </code> </section>
 
             <section id="Conditions"><h1>Conditions</h1><code spellcheck="false" contenteditable="true" class="language-js"  onblur=" hljs.highlightAll()" onkeyup="if(sw){sw=false;where=getPos(this);dummything(this);setPos(this,where);}" onkeydown="sw=true;">
@@ -398,17 +398,20 @@ const person = {
     firstName: "Alrik",
     lastName: "He",
     age: 32,
+    "first-last": "Alrik He"
 };
 
 // Destructuring till variabler
 let {firstName, lastName} = person  //destruktar till 2 variablar
+console.log(firstName,lastName)     // console.log() kan logga fler värden för parametrarna 
+
 const {age = 0 } = person           // destruktar till 1 variabel med default värde
 const {lastname: surname} = person  // destruktar med
 console.log(firstName)       // loggar "Alrik"
 
-let key = "email"
-person[key] = alrik_he@hotmail.com  //runtime computed property
-let {[key]} = person                
+
+person["email"] = alrik_he@hotmail.com  
+let {["email"]} = person                //runtime computed property
 
 //array
 
