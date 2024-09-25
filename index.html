@@ -3,7 +3,7 @@
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Document</title>
+        <title>FE23</title>
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous" />
 
         <link rel="stylesheet" href="style.css" />
@@ -56,6 +56,9 @@ async await
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#If_satser">If satser</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#Destructuring">Destructuring</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#map">map()</a>
@@ -141,7 +144,7 @@ let age = 32 , vip = false
 if (age >= 18 || vip ) 
     console.log("kan gå in i klubben!");
       
-
+// switch sats
 let key = 1
 switch (key) {
 case 1:
@@ -154,8 +157,29 @@ default:  // alla andra värden key är går till default
     console.log('etc')
     break
 }
-            </code></section>
 
+// Ternary Operator
+
+console.log( ( 1 < 5 ) ? "japp" : "nope" ) // loggar "japp"
+
+            </code></section>
+            <section id="Destructuring"><h1>Destructuring</h1><code spellcheck="false" contenteditable="true" class="language-js"  onblur=" hljs.highlightAll()" onkeyup="if(sw){sw=false;where=getPos(this);dummything();setPos(this,where);}" onkeydown="sw=true;">
+// Ett objekt
+const person = {
+    firstName: "Alrik",
+    lastName: "He",
+    age: 32
+};
+
+// Destructuring till variabler
+let {firstName, lastName} = person;
+console.log(firstName)       // loggar "Alrik"
+
+
+let array = ["Alrik","Emma","Linda"]
+let array2 = {...array , "Eric"}   //destructar sedan lägger in en extra
+
+                                            </code></section>
             <section id="DOM"><h1>DOM</h1><code spellcheck="false" contenteditable="true" class="language-js"  onblur=" hljs.highlightAll()" onkeyup="if(sw){sw=false;where=getPos(this);dummything();setPos(this,where);}" onkeydown="sw=true;">
                
             </code></section>
@@ -176,6 +200,20 @@ let nyarray =  array.filter(    (element)=>{   // loopar och varje element sedan
     return  element != "yo"
 } )
             </code></section>
+
+            <section id="async_await"><h1>async await</h1><code spellcheck="false" contenteditable="true" class="language-js"  onblur=" hljs.highlightAll()" onkeyup="if(sw){sw=false;where=getPos(this);dummything();setPos(this,where);}" onkeydown="sw=true;">
+async function myFunction() {
+    return "Hello";
+}
+
+myFunction().then(
+    function(data) {console.log("GOT IT");}
+);
+
+myFunction().catch(
+    function(err) {console.err("OH NO!!!");}
+)
+                            </code></section>
         </pre>
     </body>
 </html>
